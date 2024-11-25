@@ -98,7 +98,7 @@
     <div class="container">
       <div class="content row">
         <!--Главный контент-->
-        <div class="main-content col-md-9">
+        <div class="main-content col-md-9 col-12">
           <h2>Последнии публикации</h2>
 
           <div class="post row">
@@ -106,9 +106,9 @@
               <img src="images/image4.jpg" alt="" class="img-thumbnail">
             </div>
             <div class="post_text col-12 col-md-8">
-                ><h2>
+                <h3>
                     <a href="#">Не стоит прогибаться под изменчивый мир</a>
-                </h2>
+                </h3>
                 <i class="far fa-user"> Владимир Мухин</i>
                 <i class="far fa-calendar"> 31 октября, 2024</i>
                 <p class="previem-text">
@@ -119,19 +119,117 @@
 
                 </p>
             </div>
-
           </div>
 
+          <div class="post row">
+            <div class="img col-12 col-md-4">
+              <img src="images/image4.jpg" alt="" class="img-thumbnail">
+            </div>
+            <div class="post_text col-12 col-md-8">
+                <h3>
+                    <a href="#">Не стоит прогибаться под изменчивый мир</a>
+                </h3>
+                <i class="far fa-user"> Владимир Мухин</i>
+                <i class="far fa-calendar"> 31 октября, 2024</i>
+                <p class="previem-text">
+                  Папампапам парамапам вот так вот парампампам турум пум пум.
+                  Вот этот его а тот его оооууууу ужасс как же можно так.
+                  Ну короче вы поняли... (сайтик ещё совсем маленький и только учится делать 
+                  свои первые шажочки:)
+
+                </p>
+            </div>
+          </div>
 
         </div>
         <!--Сайтбар-контент-->
-        <div class="sidebar col-md-3">
+        <div class="sidebar col-md-3 col-12">
+
+          <div class="section search">
+            <h3>Поиск по сайту</h3>
+            <form action="index.html" method="post">
+              <input type="text" name="search-term" class="text-input" placeholder="Введите запросик...">
+            </form>
+          </div>
+
+          <div class="section topics">
+            <h3>Разделы</h3>
+            <ul>
+              <li><a href="">Раздел 1</a></li>
+              <li><a href="">Раздел 1</a></li>
+              <li><a href="">Раздел 1</a></li>
+              <li><a href="">Раздел 1</a></li>
+              <li><a href="">Раздел 1</a></li>
+              <li><a href="">Раздел 1</a></li>
+              <li><a href="">Раздел 1</a></li>
+            </ul>
+          </div>
 
         </div>
       </div>
     </div>
     <!--Основная часть сайта под каруселькой (конец)-->
+    <!--Фуутер-->
+    <div class="footer container-fluid">
+      <div class="footer-content container">
+        <div class="row">
+          <div class="footer-section about col-md-4 col-12">
+            <h3 class="logo-text">History of the World</h3>
+            <p>
+              History of the World - это блог сделанный с целью информационного
+              просвещения человечества по предмету "История".
+            </p>
+            <div class="contact">
+              <span><i class="fas fa-phone"> &nbsp; +79243317792</i></span>
+              <span><i class="fas fa-envelope"> &nbsp; vladimir.zed30@gmail.com</i></span>
+            </div>
+            <div class="socials">
+              <a href="https://vk.com/id519143923"><i class="fab fa-vk"></i></a>
+            </div>
+          </div>
 
+          <div class="footer-section links col-md-4 col-12">
+            <h3>Ссылочки</h3>
+            <br>
+            <ul>
+              <a href="">
+                <li>Только скажи куда</li>
+              </a>
+              <a href="">
+                <li>Только скажи куда</li>
+              </a>
+              <a href="">
+                <li>Только скажи куда</li>
+              </a>
+              <a href="">
+                <li>Только скажи куда</li>
+              </a>
+              <a href="">
+                <li>Только скажи куда</li>
+              </a>
+            </ul>
+          </div>
+
+          <div class="footer-section contact-form col-md-4 col-12">
+            <h3>Обратная связь</h3>
+            <br>
+            <form action="index.html" method="post">
+              <input type="email" name="email" class="text-input contact-input" placeholder="Введите ваш email">
+              <textarea rows="4" name="message" class="text-input contact-input" placeholder="Введите сообщение"></textarea>
+              <button type="submit" class="btn btn-big contact-btn">
+                <i class="fas fa-envelope"></i>
+                Отправить
+              </button>
+            </form>
+          </div>
+
+        <div>
+
+        <div class="footer-bottom container-fluid">
+          &copy; HistoryWorld.com | Designed by Vladimir_Mukhin
+        </div>
+      </div>
+    </div>
     <!-- Необязательный JavaScript; выберите один из двух! -->
 
     <!-- Вариант 1: пакет Bootstrap с Popper -->
