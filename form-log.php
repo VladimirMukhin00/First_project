@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/f4f71e6e13.js" crossorigin="anonymous"></script>
 
     <!-- Custom Styling-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -53,7 +53,7 @@
     <!--END HEADER-->
     <!--FORM-->
     <div class="container reg_form">
-      <form class="row row justify-content-center" method="post" action="log-reg.html">
+      <form class="row row justify-content-center" method="post" action="form-log.html">
         <h2 class="col-12">Войти в личный кабинет</h2>
           <div class="mb-3 col-12 col-md-4">
               <label for="formGroupExampleInput" class="form-label">Логин</label>
@@ -68,7 +68,7 @@
           <div class="w-100"></div>
           <div class="mb-3 col-12 col-md-4 but-reg">
             <button type="submit" class="btn btn-primary">Войти</button>
-            <a href="">Регистрация<img src="images/free-icon-arrow-right-1549454.png"></a>
+            <a href="">Регистрация<img src="assets/images/free-icon-arrow-right-1549454.png"></a>
           </div>
       </form>
     </div>
@@ -109,7 +109,7 @@
                 <a href="">
                   <li>Только скажи куда</li>
                 </a>
-                <a href="">
+                <a href="https://github.com/VladimirMukhin00/history-of-the-world.git">
                   <li>Репозиторий GitHub</li>
                 </a>
               </ul>
