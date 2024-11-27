@@ -1,3 +1,5 @@
+<?php include("path.php"); ?>
+
 <!doctype html>
 <html lang="ru">
   <head>
@@ -20,65 +22,65 @@
     <title>History of the World</title>
   </head>
   <body>
-    <header class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 iii">
-            <h1>
-              <a href="/">History of the World</a>
-            </h1>
-          </div>
-          <nav class="col-8">
-            <ul>
-              <li><a href="#">Главная</a> </li>
-              <li><a href="#">Галерея</a> </li>
-              <li><a href="#">О сайте</a> </li>
-              
-              <li>
-                <a href="#">
-                  <i class="fa fa-user"></i>
-                  Кабинет
-                </a>
-                <ul>
-                  <li><a href="#">Админ панель</a> </li>
-                  <li><a href="#">Выход</a> </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    <!--Куки-->
 
-      </div>
-    </header>
-        
+    <div class="cookie-block">
+    <p>Можно взять ваши кукиес?</p>
+    <button class="ok">Конечно</button>
+    <button class="no">Нельзя!</button>
+    </div>
+    <script src="assets/js/scripts.js"></script>
+    
+    <!--Куки (конец)-->
+
+    <!--Шапка-->
+    <?php
+    include("app/include/header.php"); // подключение шапки
+    ?>
+    <!--Шапка (конец)-->
+    
     <!--Блок карусели (начало)-->
     <div class="container">
       <div class="row">
-        <h2 class="slider-title">Самые популярные статьи</h2>
+        <h2 class="slider-title">Топ публикации</h2>
       </div>
       <div id="carouselExampleCaptions" class="carousel slide">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="images/image1.jpg" class="d-block w-100" alt="...">
+            <img src="assets/images/image1.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Первый слайдик!</a></h5>
+              <h5><a href="about.php">О сайте</a></h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="images/image2.png" class="d-block w-100" alt="...">
+            <img src="assets/images/image2.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><a href="">Второй слайдик!</a></h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="images/image3.jpg" class="d-block w-100" alt="...">
+            <img src="assets/images/image3.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
               <h5><a href="">Третий слайдик!вау</a></h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/image6.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5><a href="">Четвертый слайдик!</a></h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/images/image5.png" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5><a href="">Пятый слайдик!шок-контент</a></h5>
             </div>
           </div>
         </div>
@@ -103,11 +105,11 @@
 
           <div class="post row">
             <div class="img col-12 col-md-4">
-              <img src="images/image4.jpg" alt="" class="img-thumbnail">
+              <img src="assets/images/image4.jpg" alt="" class="img-thumbnail">
             </div>
             <div class="post_text col-12 col-md-8">
                 <h3>
-                    <a href="#">Не стоит прогибаться под изменчивый мир</a>
+                    <a href="single.php">Не стоит прогибаться под изменчивый мир</a>
                 </h3>
                 <i class="far fa-user"> Владимир Мухин</i>
                 <i class="far fa-calendar"> 31 октября, 2024</i>
@@ -123,11 +125,11 @@
 
           <div class="post row">
             <div class="img col-12 col-md-4">
-              <img src="images/image4.jpg" alt="" class="img-thumbnail">
+              <img src="assets/images/image4.jpg" alt="" class="img-thumbnail">
             </div>
             <div class="post_text col-12 col-md-8">
                 <h3>
-                    <a href="#">Не стоит прогибаться под изменчивый мир</a>
+                    <a href="single.php">Не стоит прогибаться под изменчивый мир</a>
                 </h3>
                 <i class="far fa-user"> Владимир Мухин</i>
                 <i class="far fa-calendar"> 31 октября, 2024</i>
@@ -140,96 +142,24 @@
                 </p>
             </div>
           </div>
-
         </div>
+
         <!--Сайтбар-контент-->
-        <div class="sidebar col-md-3 col-12">
+        <?php
+        include("app/include/sitebar.php"); // подключение сайтбара
+        ?>
+        <!--Сайтбар-контент (конец)-->
 
-          <div class="section search">
-            <h3>Поиск по сайту</h3>
-            <form action="index1.html" method="post">
-              <input type="text" name="search-term" class="text-input" placeholder="Введите запросик...">
-            </form>
-          </div>
-
-          <div class="section topics">
-            <h3>Разделы</h3>
-            <ul>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-            </ul>
-          </div>
-
-        </div>
       </div>
     </div>
     <!--Основная часть сайта под каруселькой (конец)-->
+
     <!--Фуутер-->
-    <div class="footer container-fluid">
-      <div class="footer-content container">
-        <div class="row">
-          <div class="footer-section about col-md-4 col-12">
-            <h3 class="logo-text">History of the World</h3>
-            <p>
-              History of the World - это блог сделанный с целью информационного
-              просвещения человечества по предмету "История".
-            </p>
-            <div class="contact">
-              <span><i class="fas fa-phone"> &nbsp; +79243317792</i></span>
-              <span><i class="fas fa-envelope"> &nbsp; vladimir.zed30@gmail.com</i></span>
-            </div>
-            <div class="socials">
-              <a href="https://vk.com/id519143923"><i class="fab fa-vk"></i></a>
-            </div>
-          </div>
+    <?php
+    include("app/include/footer.php"); // подключение подвальчика
+    ?>
+    <!--Фуутер (конец)-->
 
-          <div class="footer-section links col-md-4 col-12">
-            <h3>Ссылочки</h3>
-            <br>
-            <ul>
-              <a href="">
-                <li>Главная</li>
-              </a>
-              <a href="">
-                <li>оооооооооооооооо</li>
-              </a>
-              <a href="">
-                <li>Только скажи куда</li>
-              </a>
-              <a href="">
-                <li>Только скажи куда</li>
-              </a>
-              <a href="https://github.com/VladimirMukhin00/history-of-the-world.git">
-                <li>Репозиторий GitHub</li>
-              </a>
-            </ul>
-          </div>
-
-          <div class="footer-section contact-form col-md-4 col-12">
-            <h3>Обратная связь</h3>
-            <br>
-            <form action="index1.html" method="post">
-              <input type="email" name="email" class="text-input contact-input" placeholder="Введите ваш email">
-              <textarea rows="4" name="message" class="text-input contact-input" placeholder="Введите сообщение"></textarea>
-              <button type="submit" class="btn btn-big contact-btn">
-                <i class="fas fa-envelope"></i>
-                Отправить
-              </button>
-            </form>
-          </div>
-
-        <div>
-
-        <div class="footer-bottom container-fluid">
-          &copy; HistoryWorld.com | Designed by Vladimir_Mukhin
-        </div>
-      </div>
-    </div>
     <!-- Необязательный JavaScript; выберите один из двух! -->
 
     <!-- Вариант 1: пакет Bootstrap с Popper -->

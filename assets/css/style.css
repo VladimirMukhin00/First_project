@@ -10,6 +10,11 @@ h5,
 h6 {
     color:rgb(237, 104, 9);
 }
+h1{
+    color: rgb(255, 234, 0);
+    text-shadow: 3px 3px 5px black; 
+
+}
 
 body {
     background:rgb(228, 217, 180);
@@ -42,7 +47,7 @@ header h1 {
     margin-top: 15px;
 }
 header div.row div.iii{
-    background-image: url(../images/rb_3056.png);
+    background-image: url(../images/rb_30561.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -189,6 +194,7 @@ header ul li ul li a {
     text-decoration: none;
     font-weight: 400;
     font-size: 1em;
+    padding-left: 5px;
 
 }
 .sidebar .topics ul li a:hover{
@@ -314,6 +320,35 @@ header ul li ul li a {
     margin-bottom: 30px;
 }
 
+blockquote {
+    background: #f9f0de; /* Цвет фона */
+    border-left: 2px solid #0083ca; /* Линия слева */
+    padding: 1em; /* Поля вокруг текста */
+   }
+   blockquote::before,
+   blockquote::after {
+    content: "“"; /* Левая кавычка */
+    font-size: 40px; /* Размер текста кавычек */
+    color: #c1172c; /* Цвет кавычек */
+    line-height: 0; /* Текст не занимает место */
+   }
+   blockquote::after {
+    content: "”"; /* Правая кавычка */
+}
+/* О САЙТЕ */
+div.about .img-thumbnail{
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 1000px;
+    padding: 0px ;
+    margin-bottom: 20px;
+}
+
+.main-content-about h2{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 /* ФОРМА РЕГИСТРАЦИИ */
 div.but-reg{
     display: flex;
@@ -360,3 +395,77 @@ div.reg_form a img{
     background: #f1efef;
     border-radius: 10px;
 }
+/* КУКИ */
+.cookie-block {
+    /* width: 75%;
+    height: 150px;
+    background: #eea436;
+    border: 5px solid white;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 30px;
+    justify-content: center;
+    z-index: 99; */
+    /* display: none; */
+    position: fixed;
+    bottom: 30px;
+    left: 10%;
+    z-index: 99;
+    width: 75%;
+    height: 150px;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+  }
+.cookie-block::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #BFE2FF;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    /* background-image: linear-gradient(#BFE2FF, #BFE2FF), linear-gradient(#337AB7, #337AB7), linear-gradient(#BFE2FF, #BFE2FF), linear-gradient(#337AB7, #337AB7); */
+    background-image: linear-gradient(white, white), linear-gradient(white, white), linear-gradient(white, white), linear-gradient(white, white);
+    /* animation: anim-ramka-5 10s linear infinite;  */
+}
+.cookie-block::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    background: rgb(237, 151, 70);
+    border-radius: 5px;
+}
+@keyframes anim-ramka-5 {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+.cookie-block p{
+    margin: 0;
+    height: 39.6px;
+    font-weight: 550;
+}
+.cookie-block button{
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 130px;
+    margin-left: 20px;
+}
+.cookie-block button.ok{
+    margin-left: 50px;
+}
+

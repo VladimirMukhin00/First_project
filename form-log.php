@@ -1,3 +1,5 @@
+<?php include("path.php"); ?>
+
 <!doctype html>
 <html lang="ru">
   <head>
@@ -20,36 +22,13 @@
     <title>History of the World</title>
   </head>
   <body>
-    <header class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 iii">
-            <h1>
-              <a href="/">History of the World</a>
-            </h1>
-          </div>
-          <nav class="col-8">
-            <ul>
-              <li><a href="#">Главная</a> </li>
-              <li><a href="#">Галерея</a> </li>
-              <li><a href="#">О сайте</a> </li>
-              
-              <li>
-                <a href="#">
-                  <i class="fa fa-user"></i>
-                  Кабинет
-                </a>
-                <ul>
-                  <li><a href="#">Админ панель</a> </li>
-                  <li><a href="#">Выход</a> </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
+    
+    <!--Шапка-->
+    <?php
+    include("app/include/header.php"); // подключение шапки
+    ?>
+    <!--Шапка (конец)-->
 
-      </div>
-    </header>
     <!--END HEADER-->
     <!--FORM-->
     <div class="container reg_form">
@@ -68,73 +47,19 @@
           <div class="w-100"></div>
           <div class="mb-3 col-12 col-md-4 but-reg">
             <button type="submit" class="btn btn-primary">Войти</button>
-            <a href="">Регистрация<img src="assets/images/free-icon-arrow-right-1549454.png"></a>
+            <a href="form-reg.php">Регистрация<img src="assets/images/free-icon-arrow-right-1549454.png"></a>
           </div>
       </form>
     </div>
 
     <!--END FORM-->
+
     <!--Фуутер-->
-    <div class="footer container-fluid">
-        <div class="footer-content container">
-          <div class="row">
-            <div class="footer-section about col-md-4 col-12">
-              <h3 class="logo-text">History of the World</h3>
-              <p>
-                History of the World - это блог сделанный с целью информационного
-                просвещения человечества по предмету "История".
-              </p>
-              <div class="contact">
-                <span><i class="fas fa-phone"> &nbsp; +79243317792</i></span>
-                <span><i class="fas fa-envelope"> &nbsp; vladimir.zed30@gmail.com</i></span>
-              </div>
-              <div class="socials">
-                <a href="https://vk.com/id519143923"><i class="fab fa-vk"></i></a>
-              </div>
-            </div>
-  
-            <div class="footer-section links col-md-4 col-12">
-              <h3>Ссылочки</h3>
-              <br>
-              <ul>
-                <a href="">
-                  <li>Главная</li>
-                </a>
-                <a href="">
-                  <li>Только скажи куда</li>
-                </a>
-                <a href="">
-                  <li>Только скажи куда</li>
-                </a>
-                <a href="">
-                  <li>Только скажи куда</li>
-                </a>
-                <a href="https://github.com/VladimirMukhin00/history-of-the-world.git">
-                  <li>Репозиторий GitHub</li>
-                </a>
-              </ul>
-            </div>
-  
-            <div class="footer-section contact-form col-md-4 col-12">
-              <h3>Обратная связь</h3>
-              <br>
-              <form action="index.html" method="post">
-                <input type="email" name="email" class="text-input contact-input" placeholder="Введите ваш email">
-                <textarea rows="4" name="message" class="text-input contact-input" placeholder="Введите сообщение"></textarea>
-                <button type="submit" class="btn btn-big contact-btn">
-                  <i class="fas fa-envelope"></i>
-                  Отправить
-                </button>
-              </form>
-            </div>
-  
-          <div>
-  
-          <div class="footer-bottom container-fluid">
-            &copy; HistoryWorld.com | Designed by Vladimir_Mukhin
-          </div>
-        </div>
-      </div>
+    <?php
+    include("app/include/footer.php"); // подключение подвальчика
+    ?>
+    <!--Фуутер (конец)-->
+
       <!-- Необязательный JavaScript; выберите один из двух! -->
   
       <!-- Вариант 1: пакет Bootstrap с Popper -->

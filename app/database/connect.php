@@ -6,7 +6,8 @@ $db_name = 'dinamic-site'; // название БД
 $db_user = 'root'; // юзер, который будет подключаться к БД
 $db_pass = 'mysql'; // пароль для подключения
 $charset = 'utf8mb4'; // кодировка
-$options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
+$options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]; // убираем дублирование при выводе БД (индексы)
 
 try{
     $pdo = new PDO(

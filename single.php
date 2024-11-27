@@ -1,3 +1,5 @@
+<?php include("path.php"); ?>
+
 <!doctype html>
 <html lang="ru">
   <head>
@@ -20,37 +22,12 @@
     <title>History of the World</title>
   </head>
   <body>
-    <header class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-4 iii">
-            <h1>
-              <a href="/">History of the World</a>
-            </h1>
-          </div>
-          <nav class="col-8">
-            <ul>
-              <li><a href="#">Главная</a> </li>
-              <li><a href="#">Галерея</a> </li>
-              <li><a href="#">О сайте</a> </li>
-              
-              <li>
-                <a href="#">
-                  <i class="fa fa-user"></i>
-                  Кабинет
-                </a>
-                <ul>
-                  <li><a href="#">Админ панель</a> </li>
-                  <li><a href="#">Выход</a> </li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
-      </div>
-    </header>
-        
+    
+    <!--Шапка-->
+    <?php
+    include("app/include/header.php"); // подключение шапки
+    ?>
+    <!--Шапка (конец)-->
 
     <!--Основная часть сайта под каруселькой (начало)-->
     <div class="container">
@@ -65,9 +42,9 @@
             рррррррррррр
           </h2>
 
-          <div class="single_post row">
+          <div class="single_post">
             <div class="img col-12">
-              <img src="images/image4.jpg" alt="" class="img-thumbnail">
+              <img src="assets/images/image4.jpg" alt="" class="img-thumbnail">
             </div>
             <div class="info">
                 <i class="far fa-user"> Владимир Мухин</i>
@@ -75,6 +52,7 @@
             </div>
             <div class="single post_text col-12">
                 <h3>Заголовок третьтего уровня</h3>
+                <blockquote>Если не знаешь что сказать - говори правду</blockquote>
                 <p>Товарищи! укрепление и развитие структуры позволяет оценить значение модели развития. Таким образом постоянный количественный рост и сфера нашей активности требуют от нас анализа новых предложений. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям. С другой стороны постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание систем массового участия. Товарищи! новая модель организационной деятельности позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт консультация с широким активом представляет собой интересный эксперимент проверки модели развития.
 
 Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании системы обучения кадров, соответствует насущным потребностям. Задача организации, в особенности же укрепление и развитие структуры позволяет оценить значение направлений прогрессивного развития.
@@ -86,94 +64,23 @@
             </div>
           </div>
         </div>
+
         <!--Сайтбар-контент-->
-        <div class="sidebar col-md-3 col-12">
-
-          <div class="section search">
-            <h3>Поиск по сайту</h3>
-            <form action="index.html" method="post">
-              <input type="text" name="search-term" class="text-input" placeholder="Введите запросик...">
-            </form>
-          </div>
-
-          <div class="section topics">
-            <h3>Разделы</h3>
-            <ul>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-              <li><a href="">Раздел 1</a></li>
-            </ul>
-          </div>
-
-        </div>
+        <?php
+        include("app/include/sitebar.php"); // подключение сайтбара
+        ?>
+        <!--Сайтбар-контент (конец)-->
+        
       </div>
     </div>
     <!--Основная часть сайта под каруселькой (конец)-->
+
     <!--Фуутер-->
-    <div class="footer container-fluid">
-      <div class="footer-content container">
-        <div class="row">
-          <div class="footer-section about col-md-4 col-12">
-            <h3 class="logo-text">History of the World</h3>
-            <p>
-              History of the World - это блог сделанный с целью информационного
-              просвещения человечества по предмету "История".
-            </p>
-            <div class="contact">
-              <span><i class="fas fa-phone"> &nbsp; +79243317792</i></span>
-              <span><i class="fas fa-envelope"> &nbsp; vladimir.zed30@gmail.com</i></span>
-            </div>
-            <div class="socials">
-              <a href="https://vk.com/id519143923"><i class="fab fa-vk"></i></a>
-            </div>
-          </div>
+    <?php
+    include("app/include/footer.php"); // подключение подвальчика
+    ?>
+    <!--Фуутер (конец)-->
 
-          <div class="footer-section links col-md-4 col-12">
-            <h3>Ссылочки</h3>
-            <br>
-            <ul>
-              <a href="">
-                <li>Главная</li>
-              </a>
-              <a href="">
-                <li>Только скажи куда</li>
-              </a>
-              <a href="">
-                <li>Только скажи куда</li>
-              </a>
-              <a href="">
-                <li>Только скажи куда</li>
-              </a>
-              <a href="https://github.com/VladimirMukhin00/history-of-the-world.git">
-                <li>Репозиторий GitHub</li>
-              </a>
-            </ul>
-          </div>
-
-          <div class="footer-section contact-form col-md-4 col-12">
-            <h3>Обратная связь</h3>
-            <br>
-            <form action="index.html" method="post">
-              <input type="email" name="email" class="text-input contact-input" placeholder="Введите ваш email">
-              <textarea rows="4" name="message" class="text-input contact-input" placeholder="Введите сообщение"></textarea>
-              <button type="submit" class="btn btn-big contact-btn">
-                <i class="fas fa-envelope"></i>
-                Отправить
-              </button>
-            </form>
-          </div>
-
-        <div>
-
-        <div class="footer-bottom container-fluid">
-          &copy; HistoryWorld.com | Designed by Vladimir_Mukhin
-        </div>
-      </div>
-    </div>
     <!-- Необязательный JavaScript; выберите один из двух! -->
 
     <!-- Вариант 1: пакет Bootstrap с Popper -->

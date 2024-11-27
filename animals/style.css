@@ -1,0 +1,33 @@
+body{
+	background: rgb(65, 144, 65);
+	font-family: Helvetica, Arial, sans-serif;
+}
+.pictures{
+	width: 900px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-auto-rows: 1fr;
+	grid-gap: 1em;
+	grid-auto-flow: dense;
+}
+.pictures figure{
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+}
+.pictures img{
+	max-width: 100%;
+	flex: 1;
+	object-fit: cover;
+
+}
+.pictures figcaption{
+	padding: 0.4em 1em;
+	background: rgb(118, 128, 137);
+	color: azure;
+}
+.pictures .biger{
+	grid-row: span 2;
+	grid-column: span 2;
+}
