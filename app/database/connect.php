@@ -15,7 +15,8 @@ try{
         $db_user, $db_pass, $options
     );
 }catch (PDOException $i){
-    die("Ошибка подключения к базе данных");
+    // die("Ошибка подключения к базе данных");
+    echo $i->getMessage();
 }
 
 ?>
