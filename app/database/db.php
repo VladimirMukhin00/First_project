@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require('connect.php');
 
 // Вывод удобочитаемой информации

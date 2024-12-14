@@ -13,14 +13,27 @@
               <li><a href="about.php">О сайте</a> </li>
               
               <li>
-                <a href="#">
-                  <i class="fa fa-user"></i>
-                  Кабинет
-                </a>
-                <ul>
-                  <li><a href="form-log.php">Админ панель</a> </li>
-                  <li><a href="#">Выход</a> </li>
-                </ul>
+                <?php if (isset($_SESSION['id'])): ?>  <!--Сессия-->
+                  <a href="#">
+                    <i class="fa fa-user"></i>
+                    <?php echo $_SESSION['login']; ?>
+                  </a>
+                  <ul>
+                    <?php if ($_SESSION['admin']): ?>
+                        <li><a href="form-log.php">Админ панель</a> </li>  <!-- скрытие админки-->
+                    <?php endif; ?>
+                    <li><a href="#">Выход</a> </li>
+                  </ul>
+                <?php else: ?>
+                  <a href="<?php echo BASE_URL . "form-log.php"?>">
+                    <i class="fa fa-user"></i>
+                    Войти
+                  </a>
+                  <ul>
+                    <li><a href="<?php echo BASE_URL . "form-reg.php"?>">Регистрация</a> </li>
+                  </ul>
+                <?php endif; ?>
+                
               </li>
             </ul>
           </nav>

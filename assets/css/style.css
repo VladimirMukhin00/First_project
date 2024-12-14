@@ -436,7 +436,7 @@ div.reg_form a img{
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
     /* background-image: linear-gradient(#BFE2FF, #BFE2FF), linear-gradient(#337AB7, #337AB7), linear-gradient(#BFE2FF, #BFE2FF), linear-gradient(#337AB7, #337AB7); */
     background-image: linear-gradient(white, white), linear-gradient(white, white), linear-gradient(white, white), linear-gradient(white, white);
-    /* animation: anim-ramka-5 10s linear infinite;  */
+    animation: anim-ramka-5 10s linear infinite; 
 }
 .cookie-block::after {
     content: '';
@@ -446,7 +446,7 @@ div.reg_form a img{
     top: 6px;
     width: calc(100% - 12px);
     height: calc(100% - 12px);
-    background: rgb(237, 151, 70);
+    background: rgb(238, 147, 57);
     border-radius: 5px;
 }
 @keyframes anim-ramka-5 {
@@ -469,3 +469,13 @@ div.reg_form a img{
     margin-left: 50px;
 }
 
+/* ФОРМА РЕГИСТРАЦИИ */
+
+form div.error p{
+    color: #c1172c;
+    font-size: 18px;
+}
+p.regStatus{
+    color: #3017c1;
+    font-size: 18px;
+}

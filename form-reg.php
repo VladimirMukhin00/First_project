@@ -43,14 +43,18 @@
     <div class="container reg_form">
       <form class="row row justify-content-center" method="post" action="form-reg.php">
         <h2 class="col-12">Форма регистрации</h2>
+          <div class="mb-3 col-12 col-md-4 error">
+            <p><?=$errMsg?></p>
+          </div>
+          <div class="w-100"></div>
           <div class="mb-3 col-12 col-md-4">
               <label for="formGroupExampleInput" class="form-label">Логин</label>
-              <input type="text" name="login" class="form-control" id="formGroupExampleInput" placeholder="Введите ваш логин...">
+              <input type="text" name="login" value="<?=$login?>" class="form-control" id="formGroupExampleInput" placeholder="Введите ваш логин...">
           </div>
           <div class="w-100"></div> <!--Принудительный переход на новую строку-->
           <div class="mb-3 col-12 col-md-4">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="email" name="email" value="<?=$email?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
           </div>
           <div class="w-100"></div>

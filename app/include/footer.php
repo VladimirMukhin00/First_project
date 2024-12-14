@@ -1,3 +1,7 @@
+<?php
+    // include("app/controllers/contact-form.php");
+?>
+
 <div class="footer container-fluid">
       <div class="footer-content container">
         <div class="row">
@@ -41,7 +45,7 @@
           <div class="footer-section contact-form col-md-4 col-12">
             <h3>Обратная связь</h3>
             <br>
-            <form action="" method="post">
+            <form action="footer.php" method="post">
               <input type="email" name="email" class="text-input contact-input" placeholder="Введите ваш email">
               <textarea rows="4" name="message" class="text-input contact-input" placeholder="Введите сообщение"></textarea>
               <button type="submit" class="btn btn-big contact-btn">
