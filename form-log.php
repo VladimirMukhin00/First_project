@@ -1,4 +1,6 @@
-<?php include("path.php"); ?>
+<?php include("path.php");
+      include("app/controllers/users.php");
+?>
 
 <!doctype html>
 <html lang="ru">
@@ -32,21 +34,25 @@
     <!--END HEADER-->
     <!--FORM-->
     <div class="container reg_form">
-      <form class="row row justify-content-center" method="post" action="form-log.html">
+      <form class="row row justify-content-center" method="post" action="form-log.php">
         <h2 class="col-12">Войти в личный кабинет</h2>
+          <div class="mb-3 col-12 col-md-4 error">
+            <p><?=$errMsg?></p>  
+          </div>
+          <div class="w-100"></div>
           <div class="mb-3 col-12 col-md-4">
-              <label for="formGroupExampleInput" class="form-label">Логин</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Введите ваш логин...">
+              <label for="formGroupExampleInput" class="form-label">Email</label>
+              <input type="email" name="email" value="<?=$email?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите ваш email...">
           </div>
           <div class="w-100"></div> <!--Принудительный переход на новую строку-->
           
           <div class="mb-3 col-12 col-md-4">
             <label for="exampleInputPassword1" class="form-label">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1">
           </div>
           <div class="w-100"></div>
           <div class="mb-3 col-12 col-md-4 but-reg">
-            <button type="submit" class="btn btn-primary">Войти</button>
+            <button type="submit" name="button-log" class="btn btn-primary">Войти</button>
             <a href="form-reg.php">Регистрация<img src="assets/images/free-icon-arrow-right-1549454.png"></a>
           </div>
       </form>

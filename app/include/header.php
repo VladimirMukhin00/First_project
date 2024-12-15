@@ -20,9 +20,9 @@
                   </a>
                   <ul>
                     <?php if ($_SESSION['admin']): ?>
-                        <li><a href="form-log.php">Админ панель</a> </li>  <!-- скрытие админки-->
+                        <li><a href="admin/posts/index.php">Админ панель</a> </li>  <!-- скрытие админки-->
                     <?php endif; ?>
-                    <li><a href="#">Выход</a> </li>
+                    <li><a href="<?php echo BASE_URL . "logout.php"?>">Выход</a> </li>
                   </ul>
                 <?php else: ?>
                   <a href="<?php echo BASE_URL . "form-log.php"?>">

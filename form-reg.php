@@ -44,7 +44,7 @@
       <form class="row row justify-content-center" method="post" action="form-reg.php">
         <h2 class="col-12">Форма регистрации</h2>
           <div class="mb-3 col-12 col-md-4 error">
-            <p><?=$errMsg?></p>
+            <p><?=$errMsg?></p>  
           </div>
           <div class="w-100"></div>
           <div class="mb-3 col-12 col-md-4">

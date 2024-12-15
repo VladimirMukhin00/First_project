@@ -4,7 +4,9 @@ include("app/database/db.php");
 $isSubmit = false;
 $errMsg = '';
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+// Форма регистрации
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
+    
     $admin = 0;
     $login = trim($_POST['login']);
     $email = trim($_POST['email']);
@@ -43,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $_SESSION['admin'] = $user['admin'];
 
             if($_SESSION['admin']){
-                header('location: ' . BASE_URL . "admin/admin.php");
+                header('location: ' . BASE_URL . "admin/posts/index.php");
             }else{
                 header('location: ' . BASE_URL); // редирект юзера на главную страницу
             }
@@ -57,5 +59,31 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $login = '';
     $email = '';
 }
+
+// Форма входа в личный кабинет
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-log'])){
+    $email = trim($_POST['email']);
+    $pass = trim($_POST['password']);
+
+    if($email === '' || $pass === ''){
+        $errMsg = "Не все поля заполнены!";
+    }else{
+        $existence = selectOne("users", ['email' => $email]);
+        if ($existence && password_verify($pass, $existence['password'])){
+
+            $_SESSION['id'] = $existence['id'];
+            $_SESSION['login'] = $existence['username'];
+            $_SESSION['admin'] = $existence['admin'];
+
+            if($_SESSION['admin']){
+                header('location: ' . BASE_URL . "admin/posts/index.php");
+            }else{
+                header('location: ' . BASE_URL); // редирект юзера на главную страницу
+            }
+        }else{
+            $errMsg = "Почта или пароль введены неверно!";
+        }
+    }
     
+}
     // $pass = password_hash($_POST['pass-second'], PASSWORD_DEFAULT);

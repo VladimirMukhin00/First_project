@@ -1,0 +1,265 @@
+*{
+    font-family: "Carlito", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color:rgb(237, 104, 9);
+}
+h1{
+    color: rgb(255, 234, 0);
+    text-shadow: 3px 3px 5px black; 
+
+}
+
+body {
+    background:rgb(228, 217, 180);
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+input{
+    padding: 10px 12px;
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgb(248, 114, 5);
+    line-height: 1.5rem;
+    color: black;
+    background: rgba(240, 248, 255, 0.514);
+}
+/*
+   HEADER
+
+*/
+header{
+    background: rgba(206, 160, 32, 0.667);
+    height: 80px;
+}
+header h1 {
+    margin-top: 15px;
+}
+header div.row div.iii{
+    background-image: url(../images/rb_30561.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+h1{
+    text-align: center;
+}
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: right;
+}
+header ul li{
+    float:left;
+    position: relative;
+}
+header ul li a{
+    display: block;
+    font-size: 1.5rem;
+    padding: 22px;
+}
+header ul li a:hover {
+    background: khaki;
+    transition: 0.5s;
+    color: chocolate;
+}
+header ul li ul {
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    width: 180px;
+    display: none;
+    z-index: 111;
+}
+header ul li:hover ul{
+    display: block;
+}
+header ul li ul a {
+    width: 100%;
+}
+header ul li ul li a {
+    padding: 10px;
+    background: rgba(229, 229, 151, 0.909);
+    color:black;
+}
+
+
+/* САЙТБАР */
+
+.sitebar{
+    margin: 30px 0;
+    background: rgb(239, 198, 65);
+    border-radius: 15px;
+    min-height: 350px;
+    
+}
+
+.sitebar ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(12, 15, 15);
+}
+
+.sitebar ul a{
+    padding: 18px;
+    display: block;
+    border: 2px solid rgb(39, 37, 37);
+    border-radius: 15px;
+    color: rgb(39, 37, 37);
+}
+.sitebar ul li{
+    margin-top: 8px;
+    background: rgb(248, 238, 207);
+    border-radius: 15px;
+}
+.sitebar ul li:hover{
+    background: rgba(248, 238, 207, 0.537);
+}
+
+
+/* ОСНОВНОЙ КОНТЕНТ */
+
+
+.posts{
+    margin-top: 30px;
+    padding-left: 42px;
+}
+
+.posts .btn{
+    border-radius: 15px;
+    
+}
+.posts .btn + .btn{
+    margin-left: 30px;
+    
+}
+.posts div.tabl{
+    margin-top: 20px;
+    /* border: 2px solid #343a40;
+    border-radius: 10px; */
+}
+
+.posts .title-table div{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #343a40;
+    font-weight: bold;
+}
+
+.posts .post div{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid #343a40;
+}
+
+.posts .post .red{
+    color: hsl(233, 100%, 49%);
+}
+
+.posts .post .del{
+    color: red;
+}
+
+/* FOOTER */
+.footer{
+    background: rgba(152, 118, 23, 0.763);
+    color: aliceblue;
+    position: relative;
+
+}
+.footer h3{
+    color: black;
+    text-shadow: 3px 3px 5px;
+}
+.footer .footer-section{
+    padding: 22px;
+}
+.footer .about .contact span{
+    display: block;
+    font-size: 1em;
+    margin-bottom: 8px;
+}
+.footer .about p{
+    margin-top: 33px;
+}
+.footer .about .socials a{
+    border: 1px solid black;
+    width: 45px;
+    height: 40px;
+    padding-top: 5px;
+    margin-right: 5px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 5px;
+}
+.footer .about .socials a:hover{
+    border: 1px solid white;
+    color: white;
+    transition: all 0.3s;
+}
+
+.footer .links ul a{
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #ffff;
+    text-decoration: none;
+}
+.footer .links ul{
+    padding-left: 17px;
+}
+.footer .links ul a:hover{
+    color: white;
+    margin-left: 15px;
+    transition: all 0.3s;
+}
+.footer .contact-form .contact-input{
+    background: #f1efefb9;
+    color: black;
+    margin-top: 10px;
+    line-height: 1.5rem;
+    padding: 0.9rem 1.4rem;
+    border: none;
+}
+.footer .contact-form .contact-input:focus{
+    background: #f1efef;
+}
+.footer .contact-form .contact-btn{
+    float: right;
+    font-size: 1em;
+    margin-bottom: 15px;
+    border: 1px solid black;
+}
+.footer .contact-form .contact-btn:hover{
+    color: white;
+    border-color: white;
+}
+
+.footer .footer-bottom{
+    background: #343a40;
+    color: #686868;
+    height: 30px;
+    width: 100% ;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    padding-top: 3px;
+}
+.footer .contact-form textarea{
+    width: 100%;
+    border-radius: 10px;
+    resize: none;
+}
