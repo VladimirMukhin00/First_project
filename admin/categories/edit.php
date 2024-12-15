@@ -1,5 +1,6 @@
-<?php session_start(); 
+<?php   // session_start();
         include "../../path.php";
+        include "../../app/controllers/categories.php";
 ?>
 
 <!doctype html>
@@ -34,23 +35,29 @@
         <?php include('../../app/include/sitebar-admin.php'); ?> <!--сайтбар-->
             <div class="posts col-9">
                 <div class="buttom row">
-                    <a href="<?php echo BASE_URL . 'admin/users/create.php';?>" class="col-3 btn btn-success">Создать пользователя</a>
-                    <a href="<?php echo BASE_URL . 'admin/users/index.php';?>" class="col-3 btn btn-primary">Управление пользователями</a>
+                    <a href="<?php echo BASE_URL . 'admin/categories/create.php';?>" class="col-3 btn btn-success">Создать категорию</a>
+                    <a href="<?php echo BASE_URL . 'admin/categories/index.php';?>" class="col-3 btn btn-primary">Управление категориями</a>
                 </div>
                 <div class="row tabl">
                     <div class="row title-table">
-                        <h2 class="tt">Пользователи</h2>
-                        <div class="col-1">ID</div>
-                        <div class="col-5">Логин</div>
-                        <div class="col-2">Роль</div>
-                        <div class="col-4">Действия</div>
+                        <h2 class="tt">Изменение категории</h2>
                     </div>
-                    <div class="row post">
-                        <div class="id col-1">1</div>
-                        <div class="title col-5">Владимир</div>
-                        <div class="autor col-2"><a href="#">Admin</a></div>
-                        <div class="red col-2"><a href="#">edit</a></div>
-                        <div class="del col-2"><a href="#">delete</a></div>
+                    <div class="row add-post">
+                        <div class="mb-12 col-12 col-md-12 error">
+                            <p><?=$errMsg?></p>  
+                        </div>
+                        <form action="edit.php" method="post">
+                            <input name="id" value="<?=$id;?>" type="hidden">
+                            <div class="col">
+                                <input name="name" value="<?=$name;?>" type="text" class="form-control" placeholder="Название категории" aria-label="Название категории">
+                            </div>
+                            <div class="col text-post">
+                                <textarea  name="description" class="form-control" id="content" rows="3" placeholder="Описание категории"><?=$description;?></textarea>
+                            </div>
+                            <div class="col save">
+                                <button name="category-edit" class="btn btn-primary save" type="submit">Сохранить изменения</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -75,3 +82,4 @@
     -->
   </body>
 </html>
+

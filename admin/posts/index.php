@@ -31,31 +31,19 @@
     <!--Шапка (конец)-->
     <!--Основной контент-->
     <div class="container">
-        <div class="row">
-            <div class="sitebar col-3">
-                <ul>
-                    <li>
-                        <a href="#">Статьи</a>
-                    </li>
-                    <li>
-                        <a href="#">Пользователи</a>
-                    </li>
-                    <li>
-                        <a href="#">Категории</a>
-                    </li>
-                </ul>
-            </div>
+        <?php include('../../app/include/sitebar-admin.php'); ?> <!--сайтбар-->
             <div class="posts col-9">
                 <div class="buttom row">
-                    <a href="create.php" class="col-3 btn btn-success">Добавить статью</a>
-                    <a href="index.php" class="col-3 btn btn-primary">Управление статьями</a>
+                    <a href="<?php echo BASE_URL . 'admin/posts/create.php';?>" class="col-3 btn btn-success">Добавить статью</a>
+                    <a href="<?php echo BASE_URL . 'admin/posts/index.php';?>" class="col-3 btn btn-primary">Управление статьями</a>
                 </div>
                 <div class="row tabl">
                     <div class="row title-table">
+                        <h2 class="tt">Cтатьи</h2>
                         <div class="col-1">ID</div>
                         <div class="col-5">Заголовок</div>
                         <div class="col-2">Автор</div>
-                        <div class="col-4">Управление</div>
+                        <div class="col-4">Действия</div>
                     </div>
                     <div class="row post">
                         <div class="id col-1">1</div>

@@ -131,7 +131,16 @@ header ul li ul li a {
 
 /* ОСНОВНОЙ КОНТЕНТ */
 
+h2.tt {
+    color: black;
+    font-size: 30px;
+    font-weight: 500;
+    margin: 2rem 0 0 0.4rem;
+    text-align: center;
+}
 
+
+/* подпункт СТАТЬИ */
 .posts{
     margin-top: 30px;
     padding-left: 42px;
@@ -145,6 +154,7 @@ header ul li ul li a {
     margin-left: 30px;
     
 }
+
 .posts div.tabl{
     margin-top: 20px;
     /* border: 2px solid #343a40;
@@ -171,6 +181,21 @@ header ul li ul li a {
 .posts .post .del{
     color: red;
 }
+
+
+/* подпункт ДОБАВЛЕНИЕ СТАТЬИ */
+.text-post{
+    margin-top: 20px;
+}
+
+.add-post form div{
+    margin: 2rem;
+}
+
+div.input-group{
+    max-width: 848px;
+}
+
 
 /* FOOTER */
 .footer{
@@ -263,3 +288,4 @@ header ul li ul li a {
     border-radius: 10px;
     resize: none;
 }
+
