@@ -27,7 +27,7 @@
   <body>
     <!--Шапка-->
     <?php
-    include("../../app/include/header-admin.php"); // подключение шапки
+    include("../../app/include/header-admin.php"); // подключение шапки + СЕССИЯ
     ?>
     <!--Шапка (конец)-->
     <!--Основной контент-->

@@ -1,5 +1,9 @@
 <?php
-include("app/database/db.php");
+
+include("..\\..\\app\\database\\db.php");
+// echo __DIR__; // Покажет текущую директорию
+// echo realpath('../database/db.php'); // Покажет полный путь к файлу или `false`, если файл не найден
+
 
 $isSubmit = false;
 $errMsg = '';
@@ -55,7 +59,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['button-reg'])){
     }
 
 } else{
-    echo 'GET';
+    // echo 'GET';
     $login = '';
     $email = '';
 }

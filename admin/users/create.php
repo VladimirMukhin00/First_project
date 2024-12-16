@@ -1,5 +1,6 @@
-<?php session_start(); 
+<?php // session_start(); 
         include "../../path.php";
+        include "../../app/controllers/users.php";
 ?>
 
 <!doctype html>
@@ -26,7 +27,7 @@
   <body>
     <!--Шапка-->
     <?php
-    include("../../app/include/header-admin.php"); // подключение шапки
+    include("../../app/include/header-admin.php"); // подключение шапки + СЕССИЯ
     ?>
     <!--Шапка (конец)-->
     <!--Основной контент-->

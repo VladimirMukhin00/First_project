@@ -1,5 +1,6 @@
-<?php session_start(); 
+<?php //session_start(); 
         include "../../path.php";
+        include "../../app/controllers/posts.php";
 ?>
 
 <!doctype html>
@@ -26,7 +27,7 @@
   <body>
     <!--Шапка-->
     <?php
-    include("../../app/include/header-admin.php"); // подключение шапки
+    include("../../app/include/header-admin.php"); // подключение шапки + СЕССИЯ
     ?>
     <!--Шапка (конец)-->
     <!--Основной контент-->
@@ -45,13 +46,20 @@
                         <div class="col-2">Автор</div>
                         <div class="col-4">Действия</div>
                     </div>
+                    <?php foreach($postsAdm as $key => $post): ?>
                     <div class="row post">
-                        <div class="id col-1">1</div>
-                        <div class="title col-5">Зарождение Вселенной</div>
-                        <div class="autor col-2">Владимир Мухин</div>
-                        <div class="red col-2"><a href="#">edit</a></div>
-                        <div class="del col-2"><a href="#">delete</a></div>
+                        <div class="id col-1"><?=$key + 1; ?></div>
+                        <div class="title col-5"><?=$post['title']; ?></div>
+                        <div class="autor col-2"><?=$post['username']; ?></div>
+                        <div class="red col-1"><a href="#">edit</a></div>
+                        <div class="del col-1"><a href="#">delete</a></div>
+                        <?php if ($post['status']): ?>
+                            <div class="status col-2"><a href="#">в черновик</a></div>
+                        <?php else: ?>
+                            <div class="status col-2"><a href="#">опубликовать</a></div>
+                        <?php endif; ?>
                     </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

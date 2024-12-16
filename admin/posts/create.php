@@ -1,5 +1,6 @@
-<?php session_start(); 
+<?php //session_start(); 
         include "../../path.php";
+        include "../../app/controllers/posts.php";
 ?>
 
 <!doctype html>
@@ -26,7 +27,7 @@
   <body>
     <!--Шапка-->
     <?php
-    include("../../app/include/header-admin.php"); // подключение шапки
+    include("../../app/include/header-admin.php"); // подключение шапки + СЕССИЯ
     ?>
     <!--Шапка (конец)-->
     <!--Основной контент-->
@@ -42,27 +43,33 @@
                     <h2 class="tt">Добавление статьи</h2>
                     </div>
                     <div class="row add-post">
-                        <form action="create.php" method="post">
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Заголовок статьи" aria-label="Заголовок статьи">
+                        <form action="create.php" method="post" enctype="multipart/form-data">
+                            <div class="col mb-4">
+                                <input name="title" type="text" class="form-control" placeholder="Заголовок статьи" aria-label="Заголовок статьи">
                             </div>
                             <div class="col text-post">
-                                <textarea class="form-control" id="editor" rows="3" placeholder="Текст статьи"></textarea>
+                                <textarea name="content" class="form-control" id="editor" rows="3" placeholder="Текст статьи"></textarea>
                             </div>
-                            <div class="col input-group">
-                                <input type="file" class="form-control" id="inputGroupFile02">
+                            <div class="col input-group mb-4 mt-4">
+                                <input name="img" type="file" class="form-control" id="inputGroupFile02">
                                 <button class="input-group-text" for="inputGroupFile02">Загрузить</button>
                             </div>
                             <div class="col">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select name="category" class="form-select" aria-label="Default select example">
+                                    <option selected>Выбрать категорию</option>
+                                    <?php foreach($categories as $key => $category): ?>
+                                      <option value="<?=$category['id']?>"><?=$category['name']?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
-                            <div class="col save">
-                                <button class="btn btn-primary save" type="submit">Сохранить</button>
+                            <div class="form-check">
+                              <input name="publish" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                              <label class="form-check-label" for="flexCheckChecked">
+                                Опубликовать
+                              </label>
+                            </div>
+                            <div class="col col-6 save">
+                                <button name="add_post" class="btn btn-primary save" type="submit">Сохранить</button>
                             </div>
                         </form>
                     </div>

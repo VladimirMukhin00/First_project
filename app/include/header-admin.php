@@ -1,3 +1,12 @@
+<?php
+  session_start();
+
+  if (!$_SESSION){
+    header('lovation: ' . BASE_URL . "form-log.php");
+  }
+
+?>
+
 <header class="container-fluid">
       <div class="container">
         <div class="row">

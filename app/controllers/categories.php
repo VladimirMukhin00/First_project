@@ -1,6 +1,7 @@
 <?php
 
-include('../../app/database/db.php');
+include SITE_ROOT . "/app/database/db.php";
+// include "C:\Program Files\Ampps\www\dinamic-site\app\database\db.php";
 
 $errMsg = '';
 $categories = selectAll('categories');
@@ -40,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['category-create'])){
     }
 
 } else{
-    echo 'GET';
+    // echo 'GET';
     $name = '';
     $description = '';
 }
