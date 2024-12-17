@@ -196,6 +196,16 @@ div.input-group{
     max-width: 848px;
 }
 
+/* error messages */
+.add-post .err{
+    padding: 20px 20px;
+
+}
+
+.add-post .err ul li{
+    color: brown;
+}
+
 
 /* FOOTER */
 .footer{

@@ -2,7 +2,7 @@
 include SITE_ROOT . "/app/database/db.php";
 // include "C:\Program Files\Ampps\www\dinamic-site\app\database\db.php";
 
-$errMsg = '';
+$errMsg = [];
 
 $id = '';
 $title = '';
@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_post'])){
         $destination = ROOT_PATH . "\assets\images\posts\\" . $imgName;
 
         if (strpos($fileType, 'image') === false){
-            die("Можно загружать только изображения...");
+            array_push($errMsg, "Можно загружать только изображения...");
 
         }else{
             $result = move_uploaded_file($fileTmpName, $destination);
@@ -33,29 +33,29 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_post'])){
             if($result){
                 $_POST['img'] = $imgName;
             }else{
-                $errMsg = "Не получилось загрузить картинку на сервер";
+                array_push($errMsg, "Не получилось загрузить картинку на сервер");
             }
         }
 
         
 
     }else{
-        $errMsg = "Не получилось подгрузить картинку";
+        array_push($errMsg, "Не получилось подгрузить картинку");
     }
 
     $title = trim($_POST['title']);
     $content = trim($_POST['content']);
     $category = trim($_POST['category']);
-
+    $id_user = trim($_POST['id_user']);
     $publish = isset($_POST['publish']) ? 1 : 0;
 
     if($title === '' || $content === '' || $category === ''){
-        $errMsg = "Не все поля заполнены!";
+        array_push($errMsg, "Не все поля заполнены!");
     }elseif (mb_strlen($title, 'UTF8') < 5){
-        $errMsg = "Заголовок статьи должен быть более 5-х символов";
+        array_push($errMsg, "Заголовок статьи должен быть более 5-ти символов");
     }else{
             $post = [
-                'id_user' => 50,         //   $_SESSION['id'],  !!!!ЗАГЛУШКА!!! Т.к. тут повторяется ссесия, если подключить вначале
+                'id_user' => $id_user,         //   $_SESSION['id'],   или   50
                 'title' => $title,
                 'content' => $content,   // отправка в БД
                 'img' => $_POST['img'],
@@ -72,42 +72,84 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_post'])){
 
 } else{
     // echo 'GET';
+    $id = '';
     $title = '';
     $content = '';
+    $publish = '';
+    $category = '';
 }
 
-// // Редактирование категории
-// if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])){
+// Редактирование статьи
+if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['id'])){
 
-//     $id = $_GET['id'];
-//     $category = selectOne('categories', ['id' => $id]);
-//     $id = $category['id'];
-//     $name = $category['name'];
-//     $description = $category['description'];
-// }
+    $post = selectOne('posts', ['id' => $_GET['id']]);
+    $id = $post['id'];
+    $title = $post['title'];
+    $content = $post['content'];
+    $id_category = $post['id_category'];
+    $publish = $post['status'];
+}
 
-// if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['category-edit'])){
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_post'])){
 
-//     $name = trim($_POST['name']);
-//     $description = trim($_POST['description']);
+    if (!empty($_FILES['img']['name'])){  // подгрузка картинок на сервер при создании статьи
+        $imgName = time() . "_" . $_FILES['img']['name'];  // time() чтобы название не повторялось
+        $fileTmpName = $_FILES['img']['tmp_name'];
+        $fileType = $_FILES['img']['type'];
+        $destination = ROOT_PATH . "\assets\images\posts\\" . $imgName;
 
-//     if($name === '' || $description === ''){
-//         $errMsg = "Не все поля заполнены!";
-//     }elseif (mb_strlen($name, 'UTF8') < 2){
-//         $errMsg = "Название категории должено быть более 2-х символов";
-//     }else{
-//             $category = [
-//                 'name' => $name,
-//                 'description' => $description   // отправка в БД
-//             ];
+        if (strpos($fileType, 'image') === false){
+            array_push($errMsg, "Можно загружать только изображения...");
+
+        }else{
+            $result = move_uploaded_file($fileTmpName, $destination);
+
+            if($result){
+                $_POST['img'] = $imgName;
+            }else{
+                array_push($errMsg, "Не получилось загрузить картинку на сервер");
+            }
+        }
+
+    }else{
+        array_push($errMsg, "Не получилось подгрузить картинку");
+    }
+
+    $id = $_POST['id'];
+    $title = trim($_POST['title']);
+    $content = trim($_POST['content']);
+    $category = trim($_POST['category']);
+    $id_user = trim($_POST['id_user']);
+    $publish = isset($_POST['publish']) ? 1 : 0;
+
+
+    if($title === '' || $content === '' || $category === ''){
+        array_push($errMsg, "Не все поля заполнены!");
+    }elseif (mb_strlen($title, 'UTF8') < 5){
+        array_push($errMsg, "Заголовок статьи должен быть более 5-ти символов");
+    }else{
+            $post = [
+                'id_user' => $id_user,         //   $_SESSION['id'],  или      50
+                'title' => $title,
+                'content' => $content,   // отправка в БД
+                'img' => $_POST['img'],
+                'status' => $publish,
+                'id_category' => $category
+            ];
         
-//             $id = $_POST['id'];
-//             $category_id = update('categories', $id, $category);
-//             echo "Обновилась категория с id = " . $id;
+            $post = update('posts', $id,$post);
+            echo "Была обновлена статья <- " . $title . " ->";
             
-//             header('location: ' . BASE_URL . 'admin/categories/index.php');
-//         }
-// }
+            header('location: ' . BASE_URL . 'admin/posts/index.php');
+        }
+
+} else{
+    // echo 'GET';
+    // $title = isset($_POST['title']);
+    // $content = isset($_POST['content']);
+    // $publish = isset($_POST['publish']) ? 1 : 0;
+    // $category = isset($_POST['id_category']);
+}
 
 // // Удаление категории
 // if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['del_id'])){

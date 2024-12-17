@@ -34,20 +34,17 @@
     <div class="container">
         <?php include('../../app/include/sitebar-admin.php'); ?> <!--сайтбар-->
             <div class="posts col-9">
-                <div class="buttom row">
-                    <a href="<?php echo BASE_URL . 'admin/posts/create.php';?>" class="col-3 btn btn-success">Добавить статью</a>
-                    <a href="<?php echo BASE_URL . 'admin/posts/index.php';?>" class="col-3 btn btn-primary">Управление статьями</a>
-                </div>
                 <div class="row tabl">
                     <div class="row title-table">
-                    <h2 class="tt">Добавление статьи</h2>
+                    <h2 class="tt">Редактирование статьи</h2>
                     </div>
                     <div class="row add-post">
                         <div class="mb-12 col-12 col-md-12 err">
                           <?php include '../../app/helps/errorinfo.php'; ?>  <!--массив с ошибками-->
                         </div>
-                        <form action="create.php" method="post" enctype="multipart/form-data">
-                          <input type="hidden" name="id_user" value="<?=$_SESSION['id'] ;?>">  <!--получение id админа с сессии-->
+                        <form action="edit.php" method="post" enctype="multipart/form-data">
+                            <input type="hidden" name="id_user" value="<?=$_SESSION['id'] ;?>">  <!--получение id админа с сессии-->
+                            <input type="hidden" name="id" value="<?=$id ;?>">
                             <div class="col mb-4">
                                 <input value="<?=$title; ?>" name="title" type="text" class="form-control" placeholder="Заголовок статьи" aria-label="Заголовок статьи">
                             </div>
@@ -60,20 +57,30 @@
                             </div>
                             <div class="col">
                                 <select name="category" class="form-select" aria-label="Default select example">
-                                    <option selected>Выбрать категорию</option>
                                     <?php foreach($categories as $key => $category): ?>
-                                      <option value="<?=$category['id']?>"><?=$category['name']?></option>
+                                        <?php if ($id_category == $category['id']): ?>
+                                            <option value="<?=$category['id']; ?>" selected><?=$category['name']; ?></option>
+                                        <?php else: ?>
+                                            <option value="<?=$category['id']; ?>"><?=$category['name']; ?></option>
+                                        <?php endif; ?>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="form-check">
-                              <input name="publish" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                              <label class="form-check-label" for="flexCheckChecked">
-                                Опубликовать
-                              </label>
+                                <?php if (empty($publish) && $publish == 0): ?>
+                                    <input name="publish" class="form-check-input" type="checkbox" id="flexCheckChecked">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Опубликовать
+                                    </label>
+                                <?php else: ?>
+                                    <input name="publish" class="form-check-input" type="checkbox" id="flexCheckChecked" checked>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Опубликовать
+                                    </label>
+                                <?php endif; ?>
                             </div>
                             <div class="col col-6 save">
-                                <button name="add_post" class="btn btn-primary save" type="submit">Сохранить</button>
+                                <button name="edit_post" class="btn btn-primary save" type="submit">Сохранить</button>
                             </div>
                         </form>
                     </div>
