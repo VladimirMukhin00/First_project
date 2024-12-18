@@ -46,17 +46,18 @@
                         <div class="mb-12 col-12 col-md-12 error">
                             <p><?=$errMsg?></p>  
                         </div>
-                        <form action="create.php" method="post">
+                        <form action="edit.php" method="post">
+                        <input type="hidden" name="id" value="<?=$id ;?>">
                             <div class="col">
                                 <label for="formGroupExampleInput" class="form-label">Логин</label>
                                 <input type="text" name="login" value="<?=$login?>" class="form-control" id="formGroupExampleInput" placeholder="Введите ваш логин...">
                             </div>
                             <div class="col">
-                                <label for="exampleInputEmail1" class="form-label">Email</label>
-                                <input type="email" name="email" value="<?=$email?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <label for="exampleInputEmail1" class="form-label">Email (нельзя отредактировать)</label>
+                                <input type="email" name="email" value="<?=$email?>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
                             </div>
                             <div class="col">
-                                <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                                <label for="exampleInputPassword1" class="form-label">Новый пароль</label>
                                 <input type="password" name="pass-first" class="form-control" id="exampleInputPassword1">
                             </div>
                             <div class="col">
@@ -72,7 +73,7 @@
                             </div>
                             </div>
                             <div class="col save">
-                                <button name="create_user" class="btn btn-primary save" type="submit">Создать</button>
+                                <button name="update_user" class="btn btn-primary save" type="submit">Обновить</button>
                             </div>
                         </form>
                     </div>

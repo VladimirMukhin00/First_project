@@ -151,10 +151,21 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_post'])){
     // $category = isset($_POST['id_category']);
 }
 
-// // Удаление категории
-// if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['del_id'])){
+// Поместить статью в черновик или опубликовать
+if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['pub_id'])){
 
-//     $id = $_GET['del_id'];
-//     delete('categories',$id);
-//     header('location: ' . BASE_URL . 'admin/categories/index.php');
-// }
+    $id = $_GET['pub_id'];
+    $publish = $_GET['publish'];
+
+    $post = update('posts', $id, ['status' => $publish]);
+    header('location: ' . BASE_URL . 'admin/posts/index.php');
+    exit();
+}
+
+// Удаление статьи
+if($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['delete_id'])){
+
+    $id = $_GET['delete_id'];
+    delete('posts',$id);
+    header('location: ' . BASE_URL . 'admin/posts/index.php');
+}

@@ -167,6 +167,9 @@ header ul li ul li a {
 }
 
 
+.ccc {
+    color: #343a40;
+}
 /* SIDEBAR */
 .search{
     margin-top: 100px;
@@ -430,7 +433,7 @@ div.reg_form a img{
     top: -50%;
     width: 200%;
     height: 200%;
-    background-color: #BFE2FF;
+    background-color: #f1f4f6;
     background-repeat: no-repeat;
     background-size: 50% 50%, 50% 50%;
     background-position: 0 0, 100% 0, 100% 100%, 0 100%;
@@ -446,7 +449,7 @@ div.reg_form a img{
     top: 6px;
     width: calc(100% - 12px);
     height: calc(100% - 12px);
-    background: rgb(238, 147, 57);
+    background: rgb(29, 27, 25);
     border-radius: 5px;
 }
 @keyframes anim-ramka-5 {
@@ -458,9 +461,10 @@ div.reg_form a img{
     margin: 0;
     height: 39.6px;
     font-weight: 550;
+    color: #f1f4f6;
 }
 .cookie-block button{
-    border-radius: 10px;
+    border-radius: 15px;
     border: 1px solid black;
     width: 130px;
     margin-left: 20px;

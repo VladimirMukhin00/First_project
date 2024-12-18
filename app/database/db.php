@@ -159,6 +159,45 @@ function selectAllFromPostsWithUsers($table1, $table2){
     dbCheckError($query);
     return $query->fetchAll();
 }
+
+
+// Выборка статей с автором на главную страницу
+function selectAllFromPostsWithUsersOnIndex($table1, $table2){
+    global $pdo;
+
+    $sql = "SELECT p.*, u.username FROM $table1 AS p JOIN $table2 AS u ON p.id_user = u.id WHERE p.status=1";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();   //$query->execute($params);
+    dbCheckError($query);
+    return $query->fetchAll();
+}
+
+// Выборка статей с автором на страницу поиска (поиск по заголовкам и соджержимому постов)
+function searchInTitleAndContent($text, $table1, $table2){
+    $text = trim(strip_tags(stripcslashes(htmlspecialchars($text))));
+    global $pdo;
+
+    $sql = "SELECT p.*, u.username FROM $table1 AS p JOIN $table2 AS u ON p.id_user = u.id WHERE p.status=1 
+    AND p.title LIKE '%$text%' OR p.content LIKE '%$text%'";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();   //$query->execute($params);
+    dbCheckError($query);
+    return $query->fetchAll();
+}
+
+// Выборка статьи с автором для single.php (страница поста)
+function selectPostFromPostsWithUsersOnSingle($table1, $table2, $id){
+    global $pdo;
+
+    $sql = "SELECT p.*, u.username FROM $table1 AS p JOIN $table2 AS u ON p.id_user = u.id WHERE p.id=$id";
+
+    $query = $pdo->prepare($sql);
+    $query->execute();   //$query->execute($params);
+    dbCheckError($query);
+    return $query->fetch();
+}
 // $params = [
 //     'admin' => 1,
 //     'username' => 'same'

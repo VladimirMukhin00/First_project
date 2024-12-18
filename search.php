@@ -1,4 +1,4 @@
-<?php session_start();
+<?php //session_start();
     include("path.php"); 
     // include("app/database/db.php");
 
@@ -26,88 +26,23 @@
     <title>History of the World</title>
   </head>
   <body>
-    <!--Куки-->
-
-    <div class="cookie-block">
-    <p>Можно взять ваши кукиес?</p>
-    <button class="ok">Конечно</button>
-    <button class="no">Нельзя!</button>
-    </div>
-    <script src="assets/js/scripts.js"></script>
-    
-    <!--Куки (конец)-->
-
     <!--Шапка-->
     <?php
     include("app/include/header.php"); // подключение шапки
     // $posts = selectAll('posts', ['status' => 1]);  // берем статьи с БД со статусом 1 - опубликованы
     $posts = selectAllFromPostsWithUsersOnIndex('posts', 'users');
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search-term'])){
+        $posts = searchInTitleAndContent($_POST['search-term'], 'posts', 'users');
+    }
     ?>
     <!--Шапка (конец)-->
     
-    <!--Блок карусели (начало)-->
-    <div class="container">
-      <div class="row">
-        <h2 class="slider-title">Топ публикации</h2>
-      </div>
-      <div id="carouselExampleCaptions" class="carousel slide">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="assets/images/image1.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><a href="about.php">О сайте</a></h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/image2.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Второй слайдик!</a></h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/image3.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Третий слайдик!вау</a></h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/image6.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Четвертый слайдик!</a></h5>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/images/image5.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Пятый слайдик!шок-контент</a></h5>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-
-    <!--Блок карусели (конец)-->
     <!--Основная часть сайта под каруселькой (начало)-->
     <div class="container">
       <div class="content row">
         <!--Главный контент-->
         <div class="main-content col-md-9 col-12">
-          <h2>Последнии публикации</h2>
+          <h2>Результаты поиска</h2>
 
           <?php foreach($posts as $post): ?>   <!--ВЫВОД СОЗДАННЫХ СТАТЕЙ С АДМИНКИ-->
           <div class="post row">

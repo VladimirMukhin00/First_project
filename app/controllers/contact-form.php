@@ -1,30 +1,30 @@
 <?php
 
-    // // получим данные с формы
-    // $email = $_POST['email'];
-    // $message = $_POST['message'];
+    // получим данные с формы
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-    // // обработка полученных данных
-    // $email = htmlspecialchars($email);
-    // $message = htmlspecialchars($message);   // преобразование символов в сущности (мнемоники)
-
-    
-    // $email = urldecode($email);
-    // $message = urldecode($message);         // декодирование URL
+    // обработка полученных данных
+    $email = htmlspecialchars($email);
+    $message = htmlspecialchars($message);   // преобразование символов в сущности (мнемоники)
 
     
-    // $email = trim($email);
-    // $message = trim($message);             // удаление пробелов с обеих сторон
+    $email = urldecode($email);
+    $message = urldecode($message);         // декодирование URL
 
-    // // отправляем данные себе на почту
+    
+    $email = trim($email);
+    $message = trim($message);             // удаление пробелов с обеих сторон
 
-    // if (mail("vladimir.zed30@gmail.com",
-    //          "Новое письмо с сайта",
-    //          "Почта отправителя: ".$email."\n".
-    //          "Сообщение: ".$message."\r\n")
-    // ){
-    //     echo ("Письмо успешно отправлено!");
-    // }
-    // else {
-    //     echo ("Ошибки при заполнении формы! Проверьте данные...");
-    // }
+    // отправляем данные себе на почту
+
+    if (mail("vladimir.zed30@gmail.com",
+             "Новое письмо с сайта",
+             "Почта отправителя: ".$email."\n".
+             "Сообщение: ".$message."\r\n")
+    ){
+        echo ("Письмо успешно отправлено!");
+    }
+    else {
+        echo ("Ошибки при заполнении формы! Проверьте данные...");
+    }

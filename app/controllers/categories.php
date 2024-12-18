@@ -17,7 +17,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['category-create'])){
     $name = trim($_POST['name']);
     $description = trim($_POST['description']);
 
-    if($name === '' || $description === ''){
+    if($name === ''){
         $errMsg = "Не все поля заполнены!";
     }elseif (mb_strlen($name, 'UTF8') < 2){
         $errMsg = "Название категории должено быть более 2-х символов";
@@ -61,7 +61,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['category-edit'])){
     $name = trim($_POST['name']);
     $description = trim($_POST['description']);
 
-    if($name === '' || $description === ''){
+    if($name === ''){
         $errMsg = "Не все поля заполнены!";
     }elseif (mb_strlen($name, 'UTF8') < 2){
         $errMsg = "Название категории должено быть более 2-х символов";

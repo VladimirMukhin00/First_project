@@ -1,3 +1,5 @@
+<?php include "app/controllers/categories.php"; ?>
+
 <header class="container-fluid">
       <div class="container">
         <div class="row">

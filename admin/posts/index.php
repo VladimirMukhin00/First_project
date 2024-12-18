@@ -52,11 +52,11 @@
                         <div class="title col-5"><?=$post['title']; ?></div>
                         <div class="autor col-2"><?=$post['username']; ?></div>
                         <div class="red col-1"><a href="edit.php?id=<?=$post['id'];?>">edit</a></div>
-                        <div class="del col-1"><a href="#">delete</a></div>
+                        <div class="del col-1"><a href="edit.php?delete_id=<?=$post['id'];?>">delete</a></div>
                         <?php if ($post['status']): ?>
-                            <div class="status col-2"><a href="#">в черновик</a></div>
+                            <div class="status col-2"><a href="edit.php?publish=0 & pub_id=<?=$post['id'];?>">в черновик</a></div>
                         <?php else: ?>
-                            <div class="status col-2"><a href="#">опубликовать</a></div>
+                            <div class="status col-2"><a href="edit.php?publish=1 & pub_id=<?=$post['id'];?>">опубликовать</a></div>
                         <?php endif; ?>
                     </div>
                     <?php endforeach; ?>
