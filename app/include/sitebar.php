@@ -4,7 +4,7 @@
 ?>
 
 
-<div class="sidebar col-md-3 col-12">
+        <div class="sidebar col-md-3 col-12">
 
           <div class="section search">
             <h3>Поиск по сайту</h3>

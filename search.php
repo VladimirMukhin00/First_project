@@ -1,4 +1,4 @@
-<?php //session_start();
+<?php session_start();
     include("path.php"); 
     // include("app/database/db.php");
 
@@ -55,9 +55,10 @@
                 </h3>
                 <i class="far fa-user"><?=$post['username'] ?></i>
                 <i class="far fa-calendar"><?=$post['created_date'] ?></i>
+                <div class="previem-text">
                 <p class="previem-text">
-                  <?=mb_substr($post['content'], 0, 150, 'UTF-8') . '...' ?>
-                </p>
+                  <?=$post['content']?>
+                </p> 
             </div>
           </div>
           <?php endforeach; ?>

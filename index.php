@@ -66,27 +66,27 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/images/image2.png" class="d-block w-100" alt="...">
+            <img src="assets/images/posts/1734597058__mmydDVce5c.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Второй слайдик!</a></h5>
+              <h5><a href="<?= BASE_URL . "single.php?post=18"?>">Мировоззрение - система взглядов и представлений о мире</a></h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/images/image3.jpg" class="d-block w-100" alt="...">
+            <img src="assets/images/posts/1734598060_4278-5.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Третий слайдик!вау</a></h5>
+              <h5><a href="<?= BASE_URL . "single.php?post=19"?>">Версии происхождения Вселенной и Земли</a></h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/images/image6.jpg" class="d-block w-100" alt="...">
+            <img src="assets/images/posts/1734598592_orient.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Четвертый слайдик!</a></h5>
+              <h5><a href="<?= BASE_URL . "single.php?post=20"?>">Цивилизации Древнего Востока</a></h5>
             </div>
           </div>
           <div class="carousel-item">
-            <img src="assets/images/image5.png" class="d-block w-100" alt="...">
+            <img src="assets/images/posts/1734600476_scale_1200.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h5><a href="">Пятый слайдик!шок-контент</a></h5>
+              <h5><a href="<?= BASE_URL . "single.php?post=21"?>">Древний Египет</a></h5>
             </div>
           </div>
         </div>
@@ -120,9 +120,11 @@
                 </h3>
                 <i class="far fa-user"><?=$post['username'] ?></i>
                 <i class="far fa-calendar"><?=$post['created_date'] ?></i>
+                <div class="previem-text">
                 <p class="previem-text">
-                  <?=mb_substr($post['content'], 0, 150, 'UTF-8') . '...' ?>
-                </p>
+                  <?=$post['content']?>
+                </p> 
+                </div>
             </div>
           </div>
           <?php endforeach; ?>

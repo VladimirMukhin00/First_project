@@ -62,9 +62,11 @@
                 </h3>
                 <i class="far fa-user"><?=$names[$n]; $n = $n + 1 ; ?></i>
                 <i class="far fa-calendar"><?=$post['created_date'] ?></i>
+                <div class="previem-text">
                 <p class="previem-text">
-                  <?=mb_substr($post['content'], 0, 150, 'UTF-8') . '...' ?>
-                </p>
+                  <?=$post['content']?>
+                </p> 
+                </div>
             </div>
           </div>
           <?php endforeach; ?>

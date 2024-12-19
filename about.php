@@ -1,4 +1,7 @@
-<?php include("path.php"); ?>
+<?php
+  session_start();
+  include("path.php"); 
+?>
 
 <!doctype html>
 <html lang="ru">
